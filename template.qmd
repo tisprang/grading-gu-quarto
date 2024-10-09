@@ -1,11 +1,10 @@
 ---
 format:
-  ffm-syllabus-pdf: default
+	grading-gu-quarto-pdf: default
 
 title: "Titel der Arbeit"
 subtitle: "Untertitel der Arbeit"
 author: "Autor:in"
-term: "Semester"
 
 module: "Modulname"
 class: "Veranstaltungsbezeichnung"
@@ -36,27 +35,27 @@ arg <- vollst + korrekt + vielfalt
 punkte <- rechtschreibung + grammatik + sprache + frage + aufbau + vollst + korrekt + vielfalt + formalia
 
 note <- dplyr::case_when(
-  lang == 0 & frage == 0 ~ "nicht bestanden",
-  lang == 0 & aufbau == 0 ~ "nicht bestanden",
-  lang == 0 & arg == 0 ~ "nicht bestanden",
-  lang == 0 & formalia == 0 ~ "nicht bestanden",
-  frage == 0 & aufbau == 0 ~ "nicht bestanden",
-  frage == 0 & arg == 0 ~ "nicht bestanden",
-  frage == 0 & formalia == 0 ~ "nicht bestanden",
-  aufbau == 0 & arg == 0 ~ "nicht bestanden",
-  aufbau == 0 & formalia == 0 ~ "nicht bestanden",
-  arg == 0 & formalia == 0 ~ "nicht bestanden",
-  punkte >= 96 ~ "1,0",
-  punkte >= 91 ~ "1,3",
-  punkte >= 86 ~ "1,7",
-  punkte >= 81 ~ "2,0",
-  punkte >= 76 ~ "2,3",
-  punkte >= 71 ~ "2,7",
-  punkte >= 66 ~ "3,0",
-  punkte >= 61 ~ "3,3",
-  punkte >= 56 ~ "3,7",
-  punkte >= 51 ~ "4,0",
-  punkte <= 50 ~ "nicht bestanden",
+	lang == 0 & frage == 0 ~ "nicht bestanden",
+	lang == 0 & aufbau == 0 ~ "nicht bestanden",
+	lang == 0 & arg == 0 ~ "nicht bestanden",
+	lang == 0 & formalia == 0 ~ "nicht bestanden",
+	frage == 0 & aufbau == 0 ~ "nicht bestanden",
+	frage == 0 & arg == 0 ~ "nicht bestanden",
+	frage == 0 & formalia == 0 ~ "nicht bestanden",
+	aufbau == 0 & arg == 0 ~ "nicht bestanden",
+	aufbau == 0 & formalia == 0 ~ "nicht bestanden",
+	arg == 0 & formalia == 0 ~ "nicht bestanden",
+	punkte >= 96 ~ "1,0",
+	punkte >= 91 ~ "1,3",
+	punkte >= 86 ~ "1,7",
+	punkte >= 81 ~ "2,0",
+	punkte >= 76 ~ "2,3",
+	punkte >= 71 ~ "2,7",
+	punkte >= 66 ~ "3,0",
+	punkte >= 61 ~ "3,3",
+	punkte >= 56 ~ "3,7",
+	punkte >= 51 ~ "4,0",
+	punkte <= 50 ~ "nicht bestanden",
 )
 ```
 
@@ -76,7 +75,7 @@ Bewertet wird die orthographische und grammatikalische Korrektheit der Arbeit. D
 
 ### Gesamtbewertung
 
-\textcolor{gublue}{**`r lang`**} von 15 möglichen Punkten.
+\textcolor{gublue}{\textbf{`r lang`}} von 15 möglichen Punkten.
 
 ## Fragestellung
 
@@ -96,7 +95,7 @@ Die Arbeit sollte eine klare Struktur aufweisen, bei der die einzelnen Bestandte
 
 ### Bewertung
 
-\textcolor{gublue}{**`r aufbau`**} von 30 möglichen Punkten.
+\textcolor{gublue}{\textbf{`r aufbau`}} von 30 möglichen Punkten.
 
 ## Stringenz der Argumentation
 
@@ -112,7 +111,7 @@ Die Arbeit sollte eine bündige und vollständige Argumentation beinhalten. Dabe
 
 ### Gesamtbewertung
 
-\textcolor{gublue}{**`r arg`**} von 35 möglichen Punkten.
+\textcolor{gublue}{\textbf{`r arg`}} von 35 möglichen Punkten.
 
 ## Einhalten der üblichen Formalia
 
@@ -122,34 +121,33 @@ Alle gängigen Formalia müssen eingehalten werden. Diese ergeben sich aus den A
 
 ### Bewertung
 
-\textcolor{gublue}{**`r formalia`**} von 30 möglichen Punkten. von 10 möglichen Punkten.
+\textcolor{gublue}{\textbf{`r formalia`}} von 30 möglichen Punkten. von 10 möglichen Punkten.
 
 \newpage
 
 # Gesamtbetrachtung
 
-Insgesamt wird der Arbeit die Note \textcolor{gublue}{**`r note`**} erteilt. Es wurden \textcolor{gublue}{**`r punkte`**} von 100 möglichen Punkten erreicht.
+Insgesamt wird der Arbeit die Note \textcolor{gublue}{\textbf{`r note`}} erteilt. Es wurden \textcolor{gublue}{\textbf{`r punkte`}} von 100 möglichen Punkten erreicht.
 
 ```{r}
-#| label: fig-radar
-#| column: margin
+#| label: radar
 
 data.frame(
-  name = "Student",
-  Sprache = lang / 15,
-  Fragestellung = frage / 10,
-  Aufbau = aufbau / 30,
-  Argumentation = arg / 35,
-  Formalia = formalia / 10
+	name = "Student",
+	Sprache = lang / 15,
+	Fragestellung = frage / 10,
+	Aufbau = aufbau / 30,
+	Argumentation = arg / 35,
+	Formalia = formalia / 10
 ) |>
 ggradar::ggradar(
-  group.line.width = 1,
-  group.point.size = 0,
-  group.colours = rgb(0, 97, 143, maxColorValue = 256),
-  background.circle.colour = "white",
-  gridline.mid.colour = "grey",
-  fill = TRUE,
-  fill.alpha = .3
+	group.line.width = 1,
+	group.point.size = 0,
+	group.colours = rgb(0, 97, 143, maxColorValue = 256),
+	background.circle.colour = "white",
+	gridline.mid.colour = "grey",
+	fill = TRUE,
+	fill.alpha = .3
 )
 ```
 
@@ -160,11 +158,11 @@ Detailrückmeldung.
 \vfill
 
 \begingroup
-  \centering
-  \raisebox{.5cm}{\wildcardb{Ort, Datum}}
-  \hspace{1cm}
-  \wildcard{Unterschrift}
-  \par
+	\centering
+	\raisebox{.5cm}{\wildcardb{Ort, Datum}}
+	\hspace{1cm}
+	\wildcard{Unterschrift}
+	\par
 \endgroup
 
 \noindent\rule[7pt]{\linewidth}{0.4pt}

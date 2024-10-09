@@ -12,7 +12,7 @@ quarto use template tisprang/grading-gu-quarto
 Use the following to install just the extension:
 
 ```bash
-quarto use template tisprang/grading-gu-quarto
+quarto add template tisprang/grading-gu-quarto
 ```
 
 ## Using
