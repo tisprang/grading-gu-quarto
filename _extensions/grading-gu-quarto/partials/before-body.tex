@@ -1,0 +1,46 @@
+\makeatletter  
+\def\@maketitle{
+\begin{raggedleft}
+\includegraphics[width = 40mm]{logo}\\[8ex]
+\end{raggedleft}
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+{\fontsize{24pt}{28pt}\selectfont\textbf{\@title}\par}
+$endif$
+$if(subtitle)$
+{\Large \bfseries $subtitle$ }\\[2ex]
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+{\large \@author }\\[2ex]
+$endif$
+\end{center}}
+\makeatother
+
+\maketitle
+
+\noindent \begin{tabular*}{\textwidth}{ @{\extracolsep{\fill}} lr @{\extracolsep{\fill}}}
+
+Modul: $if(module)$$module$$else$TBD$endif$ & Betreuer: Timo Sprang\\
+Veranstaltung: $if(class)$$class$$else$TBD$endif$  &  E-Mail: \texttt{sprang@soz.uni-frankfurt.de}\\
+Semester: $if(term)$$term$$else$TBD$endif$ & Erteilte Note: \textcolor{gublue}{$if(grade)$$grade$$else$TBD$endif$}\\
+	\hline
+	\end{tabular*}
+	
+\vspace{2mm}
+
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt} 
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\small \thepage}
+\rfoot{}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\small \thepage}
+}
