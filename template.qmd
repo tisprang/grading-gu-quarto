@@ -1,6 +1,6 @@
 ---
 format:
-	grading-gu-quarto-pdf: default
+    grading-gu-quarto-pdf: default
 
 title: "Titel der Arbeit"
 subtitle: "Untertitel der Arbeit"
@@ -85,7 +85,7 @@ Ziel ist die Formulierung einer angemessenen Forschungsfrage und die Begründung
 
 ### Bewertung
 
-\textcolor{gublue}{**`r frage`**} von 10 möglichen Punkten.
+\textcolor{gublue}{\textbf{`r frage`}} von 10 möglichen Punkten.
 
 ## Aufbau und Gliederung der Arbeit
 
@@ -129,8 +129,12 @@ Alle gängigen Formalia müssen eingehalten werden. Diese ergeben sich aus den A
 
 Insgesamt wird der Arbeit die Note \textcolor{gublue}{\textbf{`r note`}} erteilt. Es wurden \textcolor{gublue}{\textbf{`r punkte`}} von 100 möglichen Punkten erreicht.
 
+#### Bewertungsprofil
+
 ```{r}
 #| label: radar
+#| fig-width: 8
+#| fig-height: 4
 
 data.frame(
 	name = "Student",
@@ -147,7 +151,10 @@ ggradar::ggradar(
 	background.circle.colour = "white",
 	gridline.mid.colour = "grey",
 	fill = TRUE,
-	fill.alpha = .3
+	fill.alpha = .3,
+    base.size = 12,
+    axis.label.size = 3.2,
+    grid.label.size = 4.5
 )
 ```
 

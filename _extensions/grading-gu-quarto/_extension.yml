@@ -1,6 +1,6 @@
 title: Grading-GU-Quarto
 author: tisprang
-version: 0.2.0
+version: 1.0.0
 quarto-required: ">=1.5.0"
 contributes:
   formats:
@@ -12,7 +12,7 @@ contributes:
       format-resources: 
         - res/logo.png
       fontsize: 12pt
-      geometry: margin=1in
+      geometry: margin=2cm
       title-meta: Benotungsbogen Goethe-Universität
       number-sections: true
       number-depth: 3
@@ -24,3 +24,4 @@ contributes:
         warning: false
       babel-lang: ngerman
       fig-dpi: 300
+      papersize: A4
