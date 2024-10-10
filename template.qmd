@@ -121,7 +121,7 @@ Alle gängigen Formalia müssen eingehalten werden. Diese ergeben sich aus den A
 
 ### Bewertung
 
-\textcolor{gublue}{\textbf{`r formalia`}} von 30 möglichen Punkten. von 10 möglichen Punkten.
+\textcolor{gublue}{\textbf{`r formalia`}} von 10 möglichen Punkten.
 
 \newpage
 
