@@ -35,27 +35,22 @@ arg <- vollst + korrekt + vielfalt
 punkte <- rechtschreibung + grammatik + sprache + frage + aufbau + vollst + korrekt + vielfalt + formalia
 
 note <- dplyr::case_when(
-	lang == 0 & frage == 0 ~ "nicht bestanden",
-	lang == 0 & aufbau == 0 ~ "nicht bestanden",
-	lang == 0 & arg == 0 ~ "nicht bestanden",
-	lang == 0 & formalia == 0 ~ "nicht bestanden",
-	frage == 0 & aufbau == 0 ~ "nicht bestanden",
-	frage == 0 & arg == 0 ~ "nicht bestanden",
-	frage == 0 & formalia == 0 ~ "nicht bestanden",
-	aufbau == 0 & arg == 0 ~ "nicht bestanden",
-	aufbau == 0 & formalia == 0 ~ "nicht bestanden",
-	arg == 0 & formalia == 0 ~ "nicht bestanden",
-	punkte >= 96 ~ "1,0",
-	punkte >= 91 ~ "1,3",
-	punkte >= 86 ~ "1,7",
-	punkte >= 81 ~ "2,0",
-	punkte >= 76 ~ "2,3",
-	punkte >= 71 ~ "2,7",
-	punkte >= 66 ~ "3,0",
-	punkte >= 61 ~ "3,3",
-	punkte >= 56 ~ "3,7",
-	punkte >= 51 ~ "4,0",
-	punkte <= 50 ~ "nicht bestanden",
+	punkte >= 96 ~ "15",
+	punkte >= 91 ~ "14",
+	punkte >= 86 ~ "13",
+	punkte >= 81 ~ "12",
+	punkte >= 76 ~ "11",
+	punkte >= 71 ~ "10",
+	punkte >= 66 ~ "09",
+	punkte >= 61 ~ "08",
+	punkte >= 56 ~ "07",
+	punkte >= 51 ~ "06",
+	punkte >= 46 ~ "05",
+	punkte >= 41 ~ "04",
+	punkte >= 34 ~ "03",
+	punkte >= 28 ~ "02",
+	punkte >= 21 ~ "01",
+	punkte <= 20 ~ "00"
 )
 ```
 
@@ -174,4 +169,4 @@ Detailrückmeldung.
 
 \noindent\rule[7pt]{\linewidth}{0.4pt}
 
-\small Notenschlüssel = **1,0**: ab 96%; **1,3**: 95-91%; **1,7**: 90-86%; **2,0**: 85-81%; **2,3**: 80-76%; **2,7**: 75-71%; **3,0**: 70-66%; **3,3**: 65-61%; **3,7**: 60-56%; **4,0**: 55-51%; **nicht bestanden**: 50% und weniger oder in zwei Teilbereichen 0%.
+\small Notenschlüssel = **15**: ab 96%; **14**: 95-91%; **13**: 90-86%; **12**: 85-81%; **11**: 80-76%; **10**: 75-71%; **09**: 70-66%; **08**: 65-61%; **07**: 60-56%; **06**: 55-51%; **05**: 50-46%; **04**: 45-41%; **03**: 40-34%; **02**: 33-28%; **01**: 27-21%; **00**: bis 20%.
